@@ -9,6 +9,7 @@ def is_unique(string):
         True if all characters are unique, False otherwise
     """
     for i in string:
+        
         pass
     return True
 
