@@ -5,10 +5,14 @@ def sum_of_digits(input_str):
     Args:
         input_str: the string containing digits and other characters
 
-    Returns:
+    Returns:    
         the sum of all digits in the string
     """
-    return 0
+    sum = 0
+    for i in input_str:
+        if '0' <= i <= '9':
+            sum += int(i)   
+    return sum
 
 
 if __name__ == '__main__':

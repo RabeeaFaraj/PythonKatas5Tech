@@ -8,7 +8,10 @@ def count_words(sentence):
     Returns:
         the number of words in the sentence
     """
-    return 0
+    words = sentence.split()
+    #print(words)
+    cnt_words = len(words)
+    return cnt_words
 
 
 if __name__ == '__main__':
