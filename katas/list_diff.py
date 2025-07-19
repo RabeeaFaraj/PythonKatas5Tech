@@ -8,7 +8,21 @@ def find_difference(numbers):
     Returns:
         the difference between the largest and smallest numbers
     """
-    return 0
+    if not numbers:
+        raise ValueError("List is empty")
+    
+    if len(numbers) == 1:
+        return 0
+    
+    min_num = float('inf')
+    max_num = float('-inf')
+    for num in numbers:
+        if num < min_num:
+            min_num=num
+        elif num > max_num:
+            max_num=num
+    diff=max_num-min_num
+    return diff
 
 
 if __name__ == '__main__':
