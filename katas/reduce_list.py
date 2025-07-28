@@ -6,8 +6,11 @@ def reduce_array(numbers):
     Args:
         numbers: the list of integers to modify
     """
-    pass
-
+    red_list = [numbers[0]]
+    for i in range(1,len(numbers)):
+        red_list.append((numbers[i] - numbers[i-1]))
+    #print(red_list)
+    return red_list
 
 def print_list(array):
     """
@@ -23,9 +26,8 @@ if __name__ == '__main__':
     sample_list = [10, 15, 7, 20, 25]
     print("Original list: ")
     print_list(sample_list)
-    reduce_array(sample_list)
     print("Reduced list: ")
-    print_list(sample_list)
+    print_list(reduce_array(sample_list))
 
     # Expected output:
     # Original list:

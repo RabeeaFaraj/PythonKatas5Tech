@@ -8,8 +8,18 @@ def longest_common_prefix(strs):
     Returns:
         the longest common prefix, or an empty string if none exists
     """
-    return ""
+    if not strs:
+        return ""
+    
+    prefix = strs[0]
 
+    for s in strs[1:]: 
+        while not s.startswith(prefix):
+            prefix = prefix[:-1]
+            if prefix == "":
+                return ""
+
+    return prefix
 
 if __name__ == '__main__':
     test1 = ["flower", "flow", "flight"]
@@ -19,5 +29,5 @@ if __name__ == '__main__':
 
     print(f"Longest Common Prefix: {longest_common_prefix(test1)}")  # Output: "fl"
     print(f"Longest Common Prefix: {longest_common_prefix(test2)}")  # Output: ""
-    print(f"Longest Common Prefix: {longest_common_prefix(test3)}")  # Output: "inter"
+    print(f"Longest Common Prefix: {longest_common_prefix(test3)}")  # Output: "inters"
     print(f"Longest Common Prefix: {longest_common_prefix(test4)}")  # Output: "ap"
